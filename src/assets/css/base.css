@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
+
+
+:root {
+  --text: #050315;
+  --background: #fbfbfe;
+  --primary: #2f27ce;
+  --secondary: #dedcff;
+  --accent: #433bff;
+
+  --font-size-sm: .875rem;
+  --font-size: 1rem;
+  --font-size-lg: 1.25rem;
+
+  --border-radius: .5rem;
+}
+
+body {
+  font-family: 'Inter';
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--background);
+  margin: 0;
+}
