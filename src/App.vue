@@ -7,6 +7,14 @@ import AppNavigation from '@/components/AppNavigation.vue'
 const { isAuthenticated, logout, isLoading, loginWithRedirect } = useAuth0()
 
 const isAppLoading = computed(() => isLoading.value)
+
+const handleClickLogin = () => {
+  loginWithRedirect({
+    appState: {
+      target: '/profile',
+    },
+  })
+}
 </script>
 
 <template>
@@ -15,7 +23,9 @@ const isAppLoading = computed(() => isLoading.value)
     <header>
       <AppNavigation>
         <template #title>
-          <RouterLink to="/" style="text-decoration: none; color: var(--text)">Vue3 + Auth0</RouterLink>
+          <RouterLink to="/" style="text-decoration: none; color: var(--text)"
+            >Vue3 + Auth0
+          </RouterLink>
         </template>
         <template #buttons>
           <template v-if="isAuthenticated">
@@ -25,13 +35,17 @@ const isAppLoading = computed(() => isLoading.value)
             </RouterLink>
           </template>
           <template v-else>
-            <AppButton @click="loginWithRedirect()">Log in</AppButton>
+            <AppButton @click="handleClickLogin()">Log in</AppButton>
           </template>
         </template>
       </AppNavigation>
     </header>
 
-    <RouterView></RouterView>
+    <RouterView v-slot="{Component}">
+      <Transition name="slide-down" mode="out-in">
+        <Component :is="Component"/>
+      </Transition>
+    </RouterView>
   </div>
 </template>
 
