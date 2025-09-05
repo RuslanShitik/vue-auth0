@@ -1,6 +1,16 @@
 # vue-auth0
 
-This template should help get you started developing with Vue 3 in Vite.
+Demo is available at: [https://vue-auth0-seven.vercel.app/](https://vue-auth0-seven.vercel.app/)
+
+## Environment Variables
+
+Before running the project, create a `.env` file with the following variables:
+
+```dotenv
+VITE_AUTH0_DOMAIN=
+VITE_AUTH0_CLIENT_ID=
+```
+
 
 ## Recommended IDE Setup
 
